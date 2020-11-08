@@ -103,4 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
+# Node.js output file
 /dist/main.js
