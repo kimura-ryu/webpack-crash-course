@@ -1,7 +1,7 @@
 const path = require('path')
 const outputPath = path.resolve(__dirname, 'dist')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -56,5 +56,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css'
     })
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({})
+    ],
+  }
 }
